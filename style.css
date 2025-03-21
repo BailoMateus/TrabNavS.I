@@ -87,3 +87,90 @@
   a:hover {
     text-decoration: underline;
   }
+
+/* Estilos gerais para o container */
+.container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+/* Título da página */
+.container h1 {
+  font-size: 2rem;
+  color: #2575fc;
+  margin-bottom: 1.5rem;
+}
+
+/* Formulário de cadastro */
+#cadastroForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Labels dos campos */
+#cadastroForm label {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #555;
+  text-align: left;
+}
+
+/* Inputs do formulário */
+#cadastroForm input {
+  padding: 0.8rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+#cadastroForm input:focus {
+  border-color: #2575fc;
+}
+
+/* Botão de cadastro */
+#cadastroForm button {
+  padding: 0.8rem;
+  background: #2575fc;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+#cadastroForm button:hover {
+  background: #1a5bbf;
+}
+
+/* Mensagem de erro */
+.mensagem-erro {
+  color: #ff4d4d;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
+
+/* Link para login */
+.container p {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.container a {
+  color: #2575fc;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.container a:hover {
+  text-decoration: underline;
+}
