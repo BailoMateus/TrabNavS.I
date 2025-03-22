@@ -1,145 +1,94 @@
-/* Reset básico */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: 'Arial', sans-serif;
-    background: linear-gradient(135deg, #6a11cb, #2575fc);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    color: #333;
-  }
-  
-  .container {
-    background: #fff;
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    width: 100%;
-    max-width: 400px;
-    text-align: center;
-  }
-  
-  h1 {
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
-    color: #2575fc;
-  }
-  
-  form {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  }
-  
-  label {
-    font-size: 1rem;
-    font-weight: bold;
-    color: #555;
-    text-align: left;
-  }
-  
-  input {
-    padding: 0.8rem;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 1rem;
-    outline: none;
-    transition: border-color 0.3s ease;
-  }
-  
-  input:focus {
-    border-color: #2575fc;
-  }
-  
-  button {
-    padding: 0.8rem;
-    background: #2575fc;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background 0.3s ease;
-  }
-  
-  button:hover {
-    background: #1a5bbf;
-  }
-  
-  p {
-    margin-top: 1rem;
-    font-size: 0.9rem;
-    color: #555;
-  }
-  
-  a {
-    color: #2575fc;
-    text-decoration: none;
-    font-weight: bold;
-  }
-  
-  a:hover {
-    text-decoration: underline;
-  }
+/* Reset básico
+Cores da ID visual
+   #255959 - Azul escuro
+   #118C80 - Verde-azulado
+   #72A6A1 - Azul claro
+   #D9D9D9 - Cinza claro
+   #0D0D0D - Preto
+*/
 
-/* Estilos gerais para o container */
+/* Reset Basico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background: #D9D9D9; /* Cinza claro para o fundo da página */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: #333; /* Cinza escuro para textos */
+}
+
 .container {
-  max-width: 400px;
-  margin: 0 auto;
+  background: #fff; /* Fundo branco para o container */
   padding: 2rem;
-  background: #fff;
   border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
   text-align: center;
 }
 
-/* Título da página */
-.container h1 {
-  font-size: 2rem;
-  color: #2575fc;
-  margin-bottom: 1.5rem;
+/* Logo e Título */
+.logo img {
+  width: 300px; /* Tamanho ajustado */
+  height: auto; /* Mantém a proporção */
+  margin-bottom: 1rem;
+
 }
 
-/* Formulário de cadastro */
-#cadastroForm {
+.logo img {
+  width: 80px;
+  margin-bottom: 1rem;
+}
+
+.logo h1 {
+  font-size: 2rem;
+  color: #255959; /* Azul escuro para o título */
+  margin-bottom: 0.5rem;
+}
+
+.logo p {
+  font-size: 0.9rem;
+  color: #555; /* Cinza escuro para o subtítulo */
+}
+
+/* Formulários */
+form {
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
 
-/* Labels dos campos */
-#cadastroForm label {
+label {
   font-size: 1rem;
   font-weight: bold;
-  color: #555;
+  color: #333; /* Cinza escuro para labels */
   text-align: left;
 }
 
-/* Inputs do formulário */
-#cadastroForm input {
+input {
   padding: 0.8rem;
-  border: 1px solid #ddd;
+  border: 1px solid #ddd; /* Cinza claro para bordas */
   border-radius: 5px;
   font-size: 1rem;
   outline: none;
   transition: border-color 0.3s ease;
 }
 
-#cadastroForm input:focus {
-  border-color: #2575fc;
+input:focus {
+  border-color: #255959; /* Azul escuro ao focar */
 }
 
-/* Botão de cadastro */
-#cadastroForm button {
+button {
   padding: 0.8rem;
-  background: #2575fc;
-  color: #fff;
+  background: #255959; /* Azul escuro para botões */
+  color: #fff; /* Texto branco */
   border: none;
   border-radius: 5px;
   font-size: 1rem;
@@ -147,30 +96,30 @@
   transition: background 0.3s ease;
 }
 
-#cadastroForm button:hover {
-  background: #1a5bbf;
+button:hover {
+  background: #118C80; /* Verde-azulado no hover */
 }
 
-/* Mensagem de erro */
+/* Mensagem de Erro */
 .mensagem-erro {
-  color: #ff4d4d;
+  color: #ff4d4d; /* Vermelho para mensagens de erro */
   font-size: 0.9rem;
   margin-top: 0.5rem;
 }
 
-/* Link para login */
-.container p {
+/* Links */
+p {
   margin-top: 1rem;
   font-size: 0.9rem;
-  color: #555;
+  color: #555; /* Cinza escuro para textos secundários */
 }
 
-.container a {
-  color: #2575fc;
+a {
+  color: #255959; /* Azul profundo para links */
   text-decoration: none;
   font-weight: bold;
 }
 
-.container a:hover {
+a:hover {
   text-decoration: underline;
 }

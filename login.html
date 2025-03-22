@@ -3,12 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login</title>
+  <title>Login - MoneyTrack</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="container">
-    <h1>Login</h1>
+    <!-- Logo e Título -->
+    <div class="logo">
+      <img src="assets/logo.png" alt="MoneyTrack Logo" width="300"> 
+      <h1>MoneyTrack</h1>
+      <p>A Financial Tracking App</p>
+    </div>
+
+    <!-- Formulário de Login -->
     <form id="loginForm">
       <label for="email">Email:</label>
       <input type="email" id="email" required>
@@ -16,6 +23,8 @@
       <input type="password" id="senha" required>
       <button type="submit">Entrar</button>
     </form>
+
+    <!-- Link para Cadastro -->
     <p>Não tem uma conta? <a href="cadastro.html">Cadastre-se</a></p>
   </div>
   <script src="script.js"></script>
