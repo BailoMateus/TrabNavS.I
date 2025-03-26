@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - MoneyTrack</title>
+  <!-- CORREÇÃO: Verifique o caminho correto do CSS -->
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="dashboard-body">
+  <div class="dashboard-container">
+    <!-- Sidebar Estilizada -->
+    <aside class="dashboard-sidebar">
+      <div class="sidebar-header">
+        <i class="fas fa-wallet logo-icon"></i>
+        <h1>MoneyTrack</h1>
+      </div>
+      
+      <nav class="sidebar-nav">
+        <a href="#" class="active"><i class="fas fa-home"></i> Página Inicial</a>
+        <a href="#"><i class="fas fa-calendar-alt"></i> Relatório por Período</a>
+        <a href="#"><i class="fas fa-folder"></i> Relatório por Categoria</a>
+        <a href="#"><i class="fas fa-bullseye"></i> Metas</a>
+        <a href="#"><i class="fas fa-cog"></i> Configurações</a>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="dashboard-main">
+      <!-- Header Adicionado -->
+      <header class="dashboard-header">
+        <h2>Bem-vindo de volta!</h2>
+        <div class="user-info">
+          <span class="user-name">Usuário</span>
+          <i class="fas fa-user-circle user-avatar"></i>
+        </div>
+      </header>
+
+      <!-- Botões de Ação -->
+      <div class="action-buttons">
+        <button class="btn btn-primary">
+          <i class="fas fa-plus"></i> Adicionar Despesa
+        </button>
+        <button class="btn btn-secondary">
+          <i class="fas fa-list"></i> Lista Completa
+        </button>
+      </div>
+
+      <!-- Conteúdo Principal -->
+      <div class="dashboard-content">
+        <!-- Cards Superiores -->
+        <div class="cards-container">
+          <div class="dashboard-card">
+            <div class="card-icon">
+              <i class="fas fa-wallet"></i>
+            </div>
+            <div class="card-content">
+              <h3>Saldo Atual</h3>
+              <p>R$ 2.450,00</p>
+            </div>
+          </div>
+          
+          <div class="dashboard-card">
+            <div class="card-icon">
+              <i class="fas fa-chart-line"></i>
+            </div>
+            <div class="card-content">
+              <h3>Gastos do Mês</h3>
+              <p>R$ 1.200,00</p>
+            </div>
+          </div>
+          
+          <div class="dashboard-card">
+            <div class="card-icon">
+              <i class="fas fa-bullseye"></i>
+            </div>
+            <div class="card-content">
+              <h3>Meta Mensal</h3>
+              <p>67% concluída</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Gráfico -->
+        <div class="chart-wrapper">
+          <h3 class="chart-title">Gastos Mensais</h3>
+          <div class="chart-container">
+            <canvas id="financeChart"></canvas>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Feed de Notificações (Sidebar Direita) -->
+    <aside class="notifications-sidebar">
+      <h3><i class="fas fa-bell"></i> Últimas Notificações</h3>
+      <div class="notifications-list">
+        <div class="notification-item">
+          <div class="notification-icon">
+            <i class="fas fa-coffee"></i>
+          </div>
+          <div class="notification-content">
+            <p>Café - R$15,00</p>
+            <small>Ontem, 08:30</small>
+          </div>
+        </div>
+        
+        <div class="notification-item">
+          <div class="notification-icon">
+            <i class="fas fa-taxi"></i>
+          </div>
+          <div class="notification-content">
+            <p>Uber - R$22,50</p>
+            <small>Há 2 dias</small>
+          </div>
+        </div>
+        
+        <div class="notification-item">
+          <div class="notification-icon">
+            <i class="fas fa-plane"></i>
+          </div>
+          <div class="notification-content">
+            <p>Meta 'Viagem' - 82%</p>
+            <small>Atualizado hoje</small>
+          </div>
+        </div>
+      </div>
+    </aside>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="./modules/grafico.js"></script>
+  
+</body>
+</html>
