@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adicionar Despesas</title>
+</head>
+
+<body>
+    <h1>Adicione sua despesa</h1>
+    <h3>Coloque suas despesas aqui</h3>
+    <form id="adicionarDespesaForm">
+        <label for="nome">Nome da despesa:</label>
+        <input type="text" id="nome" required placeholder="Nome">
+        <br>
+        <br>
+        <label for="categoria">Categoria</label>
+        <select name="categoria2" id="categoria">
+            <option value="nomecategoria"  disabled selected>Selecione</option>
+            <option value="nomecategoria">Lazer</option>
+            <option value="nomecategoria">Estudos</option>
+            <option value="nomecategoria">Alimentação</option>
+            <option value="nomecategoria">Moradia</option>
+            <option value="nomecategoria">Transporte</option>
+            <option value="nomecategoria">Viagens</option>
+            <option value="nomecategoria">Saúde</option>
+        </select>
+        <br>
+        <br>
+        <label for="valor">Valor:</label>
+        <input type="number" id="valor" required placeholder="00,00R$" step="0.01">
+        <br>
+        <br>
+        <label for="data">Data:</label>
+        <input type="date" id="data" required>
+        <br>
+        <br>
+        <input type="button" value="Proximo" onclick="window.location.href='class_custos.html'">
+        <input type="button" value="Cancelar" onclick="window.location.href='dashboard.html'">
+
+    </body>
+
+</html>
