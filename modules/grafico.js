@@ -4,10 +4,10 @@ document.addEventListener('DOMContentLoaded', function() {
     new Chart(ctx, {
       type: 'bar',
       data: {
-        labels: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun'],
+        labels: ['Lazer', 'Estudos', 'Alimentação', 'Moradia', 'Transporte', 'Viagens'],
         datasets: [{
-          label: 'Gastos Mensais (R$)',
-          data: [1200, 1900, 1500, 2000, 1800, 2200],
+          label: 'Gastos por Categoria (R$)',
+          data: [900, 1200, 1000, 2000, 1100, 1400],
           backgroundColor: '#255959',
           borderColor: '#118C80',
           borderWidth: 1
