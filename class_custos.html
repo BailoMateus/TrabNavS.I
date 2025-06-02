@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classificação de custos recorrentes</title>
+</head>
+
+<body>
+    <h1>Classificação de custos recorrentes</h1>
+    <h3>Classifique as suas despesas aqui</h3>
+    <form id="class_custosForm">
+        <br>
+        <label for="categoria">Forma de pagamento</label>
+        <select name="categoria2" id="categoria">
+            <option value="nomecategoria"disabled selected>Selecione</option>
+            <option value="nomecategoria">Dinheiro</option>
+            <option value="nomecategoria">Pix</option>
+            <option value="nomecategoria">Cartão de Crédito</option>
+            <option value="nomecategoria">Cartão de Débito</option>
+            <option value="nomecategoria">Boleto Bancário</option>
+            <option value="nomecategoria">Transferência Bancária</option>
+            <option value="nomecategoria">Cheque</option>
+        </select>
+        <br>
+        <br>
+        <div id="compra_parcelada">
+        <input type="checkbox" name="parcelada" id="parcelada">
+        <label for="parcelada">Compra Parcelada?</label>
+        <br>
+        <label for="parcelada">Clique para liberar as Parcelas</label>
+        </div>
+        <br>
+        <br>
+        <label for="parcelas">Parcelas</label>
+        <input type="number" id="parcelas" required placeholder="1x">
+        <br>
+        <br>
+        <div id="datas">
+        <div id="data_inicio">
+        <label for="data">Data - Início</label>
+        <input type="date" id="data" required>
+        </div>
+        <div id="data_final">
+        <label for="data">Data - Final</label>
+        <input type="date" id="data" required>
+        </div>
+        </div>
+        <br>
+        <br>
+        <input type="button" value="Salvar" onclick="window.location.href='dashboard.html'">
+
+    </body>
+
+</html>

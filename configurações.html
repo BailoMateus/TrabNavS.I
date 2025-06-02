@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configurações - MoneyTrack</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body class="dashboard-body">
+    <!-- 1. HEADER -->
+    <header class="main-header">
+        <img src="assets/logo.png" alt="" width="70px">
+        <div class="header-title">MoneyTrack</div>
+        <div class="user-menu">
+            <i class="fas fa-bell notification-icon"></i>
+            <div class="user-avatar">
+                <i class="fas fa-user-circle"></i>
+                <span>Usuário</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- 2. SIDEBAR -->
+    <aside class="main-sidebar">
+        <nav class="sidebar-nav">
+            <a href="#" class="active"><i class="fas fa-home"></i> Página Inicial</a>
+            <a href="#"><i class="fas fa-calendar-alt"></i> Relatórios</a>
+            <a href="#"><i class="fas fa-bullseye"></i> Metas</a>
+            <a href="#"><i class="fas fa-cog"></i> Configurações</a>
+        </nav>
+    </aside>
+
+    <!-- 3. CONTEÚDO PRINCIPAL -->
+    <main class="content-area">
+        <h1>Configurações</h1>
+
+        <h3>Configurações de Login</h3>
+        <br>
+        <div id="email_configs">
+            <label for="email">Email</label>
+            <br>
+            <input type="email" name="email" id="email">
+            <input type="button" value="Alterar Email">
+        </div>
+        <br>
+        <br>
+        <div id="password_configs">
+            <label for="password">Senha</label>
+            <input type="password" name="senha" id="password">
+            <input type="button" value="Alterar Senha">
+        </div>
+        <br>
+        <br>
+        <h3>Configurações de Usuário</h3>
+        <div id="user_configs">
+            <label for="currency">Escolha uma moeda:</label>
+            <select id="currency" name="currency">
+                <option value="USD">🇺🇸 Dólar Americano (USD)</option>
+                <option value="EUR">🇪🇺 Euro (EUR)</option>
+                <option value="JPY">🇯🇵 Iene Japonês (JPY)</option>
+                <option value="GBP">🇬🇧 Libra Esterlina (GBP)</option>
+                <option value="CHF">🇨🇭 Franco Suíço (CHF)</option>
+                <option value="AUD">🇦🇺 Dólar Australiano (AUD)</option>
+                <option value="CAD">🇨🇦 Dólar Canadense (CAD)</option>
+                <option value="CNY">🇨🇳 Yuan Chinês (CNY)</option>
+                <option value="HKD">🇭🇰 Dólar de Hong Kong (HKD)</option>
+                <option value="BRL">🇧🇷 Real Brasileiro (BRL)</option>
+                <option value="INR">🇮🇳 Rúpia Indiana (INR)</option>
+                <option value="RUB">🇷🇺 Rublo Russo (RUB)</option>
+                <option value="ZAR">🇿🇦 Rand Sul-Africano (ZAR)</option>
+                <option value="KRW">🇰🇷 Won Sul-Coreano (KRW)</option>
+                <option value="MXN">🇲🇽 Peso Mexicano (MXN)</option>
+            </select>
+            <br>
+            <input type="button" value="Salvar">
+        </div>
+        <br>
+        <h3>Configurações de Renda</h3>
+        <div id="income_configs">
+            <label for="income">Renda Atual:</label>
+            <input type="number" id="income" required placeholder="00,00R$" step="0.01">
+            <br>
+            <input type="button" value="Salvar">
+        </div>
+
+    </main>
+
+</body>
+
+</html>
