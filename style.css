@@ -330,3 +330,77 @@ a:hover {
   color: #888888;
   font-size: 0.8rem;
 }
+
+/* ============ MODAIS - FORMULÁRIOS POPUP ============ */
+
+.form-padrao {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 320px;
+}
+
+/* ========== CONFIGURAÇÕES ========== */
+
+.config-wrapper {
+  background: #e1e1e1;
+  padding: 30px;
+  border-radius: 20px;
+  max-width: 700px;
+  margin: 40px auto;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.config-wrapper h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.config-section {
+  background: #fff;
+  border-radius: 6px;
+  margin-bottom: 15px;
+  padding: 20px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+}
+
+.config-section summary {
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-bottom: 15px;
+  list-style: none;
+}
+
+.config-group {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.config-group input,
+.config-group select {
+  flex: 1;
+  padding: 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background: #f9f9f9;
+}
+
+.config-group button {
+  padding: 0.6rem 1.2rem;
+  background: #255959;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.config-group button:hover {
+  background: #118C80;
+}

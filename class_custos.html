@@ -1,56 +1,78 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Classificação de custos recorrentes</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Classificação de Custos - MoneyTrack</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
 </head>
+<body class="dashboard-body">
 
-<body>
-    <h1>Classificação de custos recorrentes</h1>
-    <h3>Classifique as suas despesas aqui</h3>
-    <form id="class_custosForm">
-        <br>
-        <label for="categoria">Forma de pagamento</label>
-        <select name="categoria2" id="categoria">
-            <option value="nomecategoria"disabled selected>Selecione</option>
-            <option value="nomecategoria">Dinheiro</option>
-            <option value="nomecategoria">Pix</option>
-            <option value="nomecategoria">Cartão de Crédito</option>
-            <option value="nomecategoria">Cartão de Débito</option>
-            <option value="nomecategoria">Boleto Bancário</option>
-            <option value="nomecategoria">Transferência Bancária</option>
-            <option value="nomecategoria">Cheque</option>
-        </select>
-        <br>
-        <br>
-        <div id="compra_parcelada">
-        <input type="checkbox" name="parcelada" id="parcelada">
-        <label for="parcelada">Compra Parcelada?</label>
-        <br>
-        <label for="parcelada">Clique para liberar as Parcelas</label>
-        </div>
-        <br>
-        <br>
-        <label for="parcelas">Parcelas</label>
-        <input type="number" id="parcelas" required placeholder="1x">
-        <br>
-        <br>
-        <div id="datas">
-        <div id="data_inicio">
-        <label for="data">Data - Início</label>
-        <input type="date" id="data" required>
-        </div>
-        <div id="data_final">
-        <label for="data">Data - Final</label>
-        <input type="date" id="data" required>
-        </div>
-        </div>
-        <br>
-        <br>
-        <input type="button" value="Salvar" onclick="window.location.href='dashboard.html'">
+  <!-- HEADER -->
+  <header class="main-header">
+    <img src="assets/logo.png" alt="" width="70px" />
+    <div class="header-title">MoneyTrack</div>
+    <div class="user-menu">
+      <i class="fas fa-bell notification-icon"></i>
+      <div class="user-avatar">
+        <i class="fas fa-user-circle"></i>
+        <span>Usuário</span>
+      </div>
+    </div>
+  </header>
 
-    </body>
+  <!-- SIDEBAR -->
+  <aside class="main-sidebar">
+    <nav class="sidebar-nav">
+      <a href="dashboard.html"><i class="fas fa-home"></i> Página Inicial</a>
+      <a href="#"><i class="fas fa-calendar-alt"></i> Relatórios</a>
+      <a href="#"><i class="fas fa-bullseye"></i> Metas</a>
+      <a href="configurações.html"><i class="fas fa-cog"></i> Configurações</a>
+    </nav>
+  </aside>
 
+  <!-- CONTEÚDO -->
+  <main class="content-area">
+    <form class="form-padrao" id="class_custosForm">
+      <h1>Classificação de custos recorrentes</h1>
+      <h3>Coloque suas despesas aqui</h3>
+
+      <label for="formaPagamento">Forma de pagamento</label>
+      <select id="formaPagamento" required>
+        <option value="" disabled selected>Selecione</option>
+        <option>Dinheiro</option>
+        <option>Pix</option>
+        <option>Cartão de Crédito</option>
+        <option>Cartão de Débito</option>
+        <option>Boleto Bancário</option>
+        <option>Transferência Bancária</option>
+        <option>Cheque</option>
+      </select>
+
+      <div class="checkbox-group">
+        <input type="checkbox" id="parcelada" />
+        <label for="parcelada">Compra Parcelada</label>
+        <p class="info-text">Clique para liberar as Parcelas</p>
+      </div>
+
+      <label for="parcelas">Parcelas</label>
+      <input type="text" id="parcelas" placeholder="5x" />
+
+      <div class="date-group">
+        <div>
+          <label for="dataInicio">Data - Início</label>
+          <input type="date" id="dataInicio" required />
+        </div>
+        <div>
+          <label for="dataFinal">Data - Final</label>
+          <input type="date" id="dataFinal" required />
+        </div>
+      </div>
+
+      <button type="button" onclick="window.location.href='dashboard.html'">Salvar</button>
+    </form>
+  </main>
+
+</body>
 </html>
