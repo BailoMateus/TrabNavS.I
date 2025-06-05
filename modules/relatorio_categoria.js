@@ -3,7 +3,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     if (ctx) {
         // Dados de exemplo para o gráfico
-        // No futuro, esses dados viriam do seu sistema de armazenamento (localStorage, backend, etc.)
         const data = {
             labels: [
                 'Lazer',
@@ -74,26 +73,4 @@ document.addEventListener('DOMContentLoaded', function () {
         new Chart(ctx, config);
     }
 
-    // Lógica para interatividade da lista de categorias (cliques)
-    const categoriaLinks = document.querySelectorAll('.categorias-sidebar-relatorio a');
-    categoriaLinks.forEach(link => {
-        link.addEventListener('click', function(event) {
-            event.preventDefault(); // Previne a navegação padrão do link
-
-            // Remove a classe 'active-categoria' de todos os itens <li>
-            document.querySelectorAll('.categorias-sidebar-relatorio li').forEach(li => {
-                li.classList.remove('active-categoria');
-            });
-
-            // Adiciona a classe 'active-categoria' ao item <li> pai do link clicado
-            this.closest('li').classList.add('active-categoria');
-
-            const categoriaSelecionada = this.dataset.categoria;
-            console.log('Categoria selecionada:', categoriaSelecionada);
-            // Aqui você adicionaria a lógica para atualizar o gráfico
-            // com base na categoria selecionada (filtrar dados, destacar, etc.)
-            // Por enquanto, apenas registramos no console.
-            alert(`Categoria selecionada: ${this.textContent}. A funcionalidade de filtro do gráfico ainda não foi implementada.`);
-        });
-    });
 });

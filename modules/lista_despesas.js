@@ -1,8 +1,28 @@
 document.addEventListener('DOMContentLoaded', function() {
   const corpoTabela = document.getElementById('corpoTabelaDespesas');
-  const despesaSalva = JSON.parse(sessionStorage.getItem('ultimaDespesaAdicionada'));
+  let despesaSalva = null;
 
-  // Mapeamento de categorias para ícones Font Awesome
+  // Log para verificar se o elemento da tabela foi encontrado
+  if (!corpoTabela) {
+    console.error('Elemento "corpoTabelaDespesas" (tbody) não encontrado no HTML de lista_despesas.html.');
+    return; // Interrompe a execução se a tabela não for encontrada
+  }
+
+  try {
+    const despesaSalvaJSON = sessionStorage.getItem('ultimaDespesaAdicionada');
+    console.log('Conteúdo bruto de "ultimaDespesaAdicionada" do sessionStorage:', despesaSalvaJSON);
+
+    if (despesaSalvaJSON) {
+      despesaSalva = JSON.parse(despesaSalvaJSON);
+      console.log('Despesa recuperada e parseada em lista_despesas:', despesaSalva);
+    } else {
+      console.warn('Nenhuma "ultimaDespesaAdicionada" encontrada no sessionStorage ao carregar lista_despesas.');
+    }
+  } catch (e) {
+    console.error('Erro ao recuperar ou parsear "ultimaDespesaAdicionada" do sessionStorage:', e);
+  }
+
+
   const iconesCategoria = {
     'Lazer': 'fas fa-film',
     'Estudos': 'fas fa-graduation-cap',
@@ -11,10 +31,18 @@ document.addEventListener('DOMContentLoaded', function() {
     'Transporte': 'fas fa-car',
     'Viagens': 'fas fa-plane',
     'Saúde': 'fas fa-heartbeat',
-    'Padrão': 'fas fa-dollar-sign' // Ícone padrão se a categoria não for mapeada
+    'Padrão': 'fas fa-dollar-sign'
   };
 
-  if (corpoTabela && despesaSalva) {
+  if (despesaSalva) { // Verifica se despesaSalva não é null e tem as propriedades esperadas
+    if (typeof despesaSalva.nome === 'undefined' || typeof despesaSalva.data === 'undefined' || 
+        typeof despesaSalva.categoria === 'undefined' || typeof despesaSalva.valor === 'undefined') {
+        console.error('Objeto despesaSalva não contém todas as propriedades esperadas (nome, data, categoria, valor):', despesaSalva);
+        // alert('Os dados da despesa estão incompletos ou corrompidos.'); // Opcional: alertar usuário
+        return; // Não tenta adicionar a linha se os dados estiverem ruins
+    }
+
+    console.log('Adicionando nova linha à tabela com dados:', despesaSalva);
     const novaLinha = corpoTabela.insertRow(0); // Insere no início da tabela
 
     const celulaNome = novaLinha.insertCell();
@@ -22,24 +50,24 @@ document.addEventListener('DOMContentLoaded', function() {
     celulaNome.innerHTML = `<i class="${iconeClasse} icone-despesa"></i> ${despesaSalva.nome}`;
 
     const celulaData = novaLinha.insertCell();
-    // Formatar data de yyyy-MM-DD para DD/MM/YYYY
-    if (despesaSalva.data) {
-      const partesData = despesaSalva.data.split('-');
+    if (despesaSalva.data && typeof despesaSalva.data === 'string' && despesaSalva.data.includes('-')) {
+      const partesData = despesaSalva.data.split('-'); // Espera YYYY-MM-DD
       if (partesData.length === 3) {
-        celulaData.textContent = `${partesData[2]}/${partesData[1]}/${partesData[0]}`;
+        celulaData.textContent = `${partesData[2]}/${partesData[1]}/${partesData[0]}`; // Formato DD/MM/YYYY
       } else {
-        celulaData.textContent = despesaSalva.data; // Mantém o original se não estiver no formato esperado
+        celulaData.textContent = despesaSalva.data; // Mantém original se não for YYYY-MM-DD
+        console.warn('Formato de data inesperado, usando valor original:', despesaSalva.data);
       }
     } else {
-      celulaData.textContent = 'N/A';
+      celulaData.textContent = despesaSalva.data || 'N/A'; // Se data não existir ou não for string
+      console.warn('Campo data ausente ou em formato inválido:', despesaSalva.data);
     }
-
 
     const celulaCategoria = novaLinha.insertCell();
     celulaCategoria.textContent = despesaSalva.categoria;
 
     const celulaCusto = novaLinha.insertCell();
-    celulaCusto.textContent = `R$ ${despesaSalva.valor}`;
+    celulaCusto.textContent = `R$ ${parseFloat(despesaSalva.valor).toFixed(2)}`;
 
     const celulaAcoes = novaLinha.insertCell();
     celulaAcoes.classList.add('acoes-cell');
@@ -48,24 +76,22 @@ document.addEventListener('DOMContentLoaded', function() {
       <button class="btn-acao deletar"><i class="fas fa-trash"></i></button>
     `;
     
-    // Opcional: Limpar o item do sessionStorage para não adicionar de novo ao recarregar
-    // sessionStorage.removeItem('ultimaDespesaAdicionada'); 
-    // Por enquanto, vamos deixar comentado para ver o efeito a cada vez que a página é carregada após o fluxo.
+  } else {
+    console.log('Nenhuma despesa para adicionar à tabela desta vez (despesaSalva está vazia ou nula).');
   }
 
   // Adicionar listeners para botões de editar/deletar (funcionalidade futura)
-  if (corpoTabela) {
-    corpoTabela.addEventListener('click', function(event) {
-      const target = event.target;
-      if (target.closest('.editar')) {
-        // Lógica para editar (ainda não implementada)
-        alert('Função Editar ainda não implementada.');
-      }
-      if (target.closest('.deletar')) {
-        // Lógica para deletar (ainda não implementada)
-        // Exemplo: target.closest('tr').remove();
-        alert('Função Deletar ainda não implementada. Para teste, esta linha NÃO será removida.');
-      }
-    });
-  }
+  corpoTabela.addEventListener('click', function(event) {
+    const target = event.target;
+    if (target.closest('.editar')) {
+      alert('Função Editar ainda não implementada.');
+    }
+    if (target.closest('.deletar')) {
+      alert('Função Deletar ainda não implementada.');
+      // Para remover a linha (exemplo de como seria):
+      // if (confirm('Tem certeza que deseja deletar esta despesa?')) {
+      //   target.closest('tr').remove();
+      // }
+    }
+  });
 });
