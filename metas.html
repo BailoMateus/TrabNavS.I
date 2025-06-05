@@ -9,9 +9,8 @@
 </head>
 <body class="dashboard-body">
 
-  <!-- HEADER -->
   <header class="main-header">
-    <img src="assets/logo.png" alt="" width="70px" />
+    <img src="assets/logo.png" alt="MoneyTrack Logo" width="70px" />
     <div class="header-title">MoneyTrack</div>
     <div class="user-menu">
       <i class="fas fa-bell notification-icon"></i>
@@ -22,44 +21,61 @@
     </div>
   </header>
 
-  <!-- SIDEBAR -->
   <aside class="main-sidebar">
     <nav class="sidebar-nav">
       <a href="dashboard.html"><i class="fas fa-home"></i> Página Inicial</a>
-      <a href="#"><i class="fas fa-calendar-alt"></i> Relatórios</a>
-      <a href="#" class="active"><i class="fas fa-bullseye"></i> Metas</a>
+      <a href="relatorio_periodo.html" class="active"><i class="fas fa-calendar-alt"></i> Relatório Período</a>
+      <a href="relatorio_categoria.html"><i class="fas fa-chart-pie"></i> Relatório Categoria</a>
+      <a href="metas.html" class="active"><i class="fas fa-bullseye"></i> Metas</a>
       <a href="configurações.html"><i class="fas fa-cog"></i> Configurações</a>
     </nav>
   </aside>
-<main class="content-area">
-    <div class="config-wrapper">
-    <h1>Metas</h1>
-        
-        <div><details open class="config-section">
-        <summary>Investimentos</summary></div>
 
-          <div>
-            <details open class="config-section">
-            <summary>Lista de metas</summary>     
-            </div>
+  <main class="content-area">
+    <div class="metas-container"> 
+      <h1 class="titulo-metas">Metas</h1>
 
-        <details open class="config-section">
-        <summary>Gerenciamento de metas</summary>
-        
-      
-
-        <div class="config-group">
-            <label>Adicionar metas</label>
-            <label for="">Gerenciar metas</label>
+      <details class="meta-section" open>
+        <summary class="meta-summary">
+          <span>Gerenciamento de Metas</span>
+          <i class="fas fa-chevron-up summary-icon"></i>
+        </summary>
+        <div class="meta-content gerenciamento-grid">
+          <div class="gerenciamento-bloco">
+            <label>Adicionar Metas</label>
+            <button class="btn btn-acao-meta">Adicionar</button>
+          </div>
+          <div class="gerenciamento-bloco">
+            <label>Gerenciar Metas</label>
+            <button class="btn btn-acao-meta">Editar</button>
+          </div>
         </div>
-            <button>Adicionar</button>
-            <button>Editar</button>
-        </div>
-        
       </details>
-      
-    </div>
-    
-</main>
 
-<body>
+      <details class="meta-section">
+        <summary class="meta-summary">
+          <span>Lista de Metas</span>
+          <i class="fas fa-chevron-down summary-icon"></i>
+        </summary>
+        <div class="meta-content">
+          <p>Conteúdo da lista de metas aparecerá aqui em breve...</p>
+          
+        </div>
+      </details>
+
+      <details class="meta-section">
+        <summary class="meta-summary">
+          <span>Investimentos</span>
+          <i class="fas fa-chevron-down summary-icon"></i>
+        </summary>
+        <div class="meta-content">
+          <p>Conteúdo sobre investimentos aparecerá aqui em breve...</p>
+         
+        </div>
+      </details>
+    </div>
+  </main>
+
+  <script src="./modules/metas.js"></script> 
+</body>
+</html>

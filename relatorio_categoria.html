@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Relatório por Categoria - MoneyTrack</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+</head>
+<body class="dashboard-body">
+
+  <header class="main-header">
+    <img src="assets/logo.png" alt="MoneyTrack Logo" width="70px" />
+    <div class="header-title">MoneyTrack</div>
+    <div class="user-menu">
+      <i class="fas fa-bell notification-icon"></i>
+      <div class="user-avatar">
+        <i class="fas fa-user-circle"></i>
+        <span>Usuário</span>
+      </div>
+    </div>
+  </header>
+
+  <aside class="main-sidebar">
+    <nav class="sidebar-nav">
+      <a href="dashboard.html"><i class="fas fa-home"></i> Página Inicial</a>
+      <a href="relatorio_periodo.html"><i class="fas fa-calendar-alt"></i> Relatório Período</a>
+      <a href="relatorio_categoria.html" class="active"><i class="fas fa-chart-pie"></i> Relatório Categoria</a>
+      <a href="metas.html"><i class="fas fa-bullseye"></i> Metas</a>
+      <a href="configurações.html"><i class="fas fa-cog"></i> Configurações</a>
+    </nav>
+  </aside>
+
+  <main class="content-area">
+    <div class="relatorio-wrapper">
+      <div class="relatorio-tabs">
+        <button class="tab-button active" onclick="showReport('categoria')">Gráfico por categorias</button>
+        <button class="tab-button" onclick="window.location.href='relatorio_periodo.html'">Gráfico por mês</button>
+      </div>
+
+      <div id="report-content-categoria" class="report-content active">
+        <div class="grafico-principal-container">
+          <div class="grafico-placeholder">
+            <canvas id="graficoDeCategorias"></canvas> 
+          </div>
+        </div>
+        <aside class="categorias-sidebar-relatorio">
+          <ul>
+            <li><a href="#" data-categoria="lazer">Lazer</a></li>
+            <li class="active-categoria"><a href="#" data-categoria="estudos">Estudos</a></li>
+            <li><a href="#" data-categoria="alimentacao">Alimentação</a></li>
+            <li><a href="#" data-categoria="moradia">Moradia</a></li>
+            <li><a href="#" data-categoria="transporte">Transporte</a></li>
+            <li><a href="#" data-categoria="viagens">Viagens</a></li>
+          </ul>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> 
+  <script src="./modules/relatorio_categoria.js"></script> 
+
+</body>
+</html>
