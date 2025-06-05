@@ -562,9 +562,6 @@ a:hover {
   transition: transform 0.2s ease-in-out;
 }
 
-/* .meta-section[open] .summary-icon {
-  transform: rotate(180deg); /* O JS agora controla a classe do ícone, não precisa de rotate aqui */
-/* } */
 
 .meta-content {
   padding: 20px;
@@ -715,7 +712,7 @@ a:hover {
   padding: 15px;
   border-radius: 6px;
   box-shadow: 0 1px 4px rgba(0,0,0,0.07);
-  align-self: flex-start; /* Alinha no topo do container flex pai */
+  align-self: flex-start; 
 }
 
 .categorias-sidebar-relatorio ul {
@@ -793,7 +790,6 @@ a:hover {
   background-color: #118C80; /* Verde-azulado no hover */
 }
 
-/* Ajuste para o container do gráfico, se necessário, para dar espaço aos controles */
 .grafico-periodo-container {
   width: 100%; /* Garante que ocupe a largura disponível após os controles */
 }
