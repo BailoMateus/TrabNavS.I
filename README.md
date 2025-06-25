@@ -13,6 +13,7 @@ Abra a pasta do projeto no Visual Studio Code.
 Instale a extensão Live Server.
 Clique com o botão direito no arquivo login.html e selecione "Open with Live Server".
 O projeto será aberto no seu navegador padrão e estará pronto para uso.
+
 Opção 2: Usando um servidor Python simples
 
 Certifique-se de que você tem Python instalado.
@@ -20,3 +21,4 @@ Abra um terminal na pasta raiz do projeto.
 Execute o comando: python -m http.server
 Abra seu navegador e acesse http://localhost:8000/.
 Clique no arquivo login.html para iniciar.
+
