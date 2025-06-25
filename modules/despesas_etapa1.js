@@ -1,19 +1,24 @@
-import { salvarEtapa1 } from "./despesas";
+console.log("Script carregado");
 
-document.addEventListener("DOMContentLoaded", () =>{
-    const btn = document.getElementById("btn-proximo");
+import { salvarEtapa1 } from './despesas.js';
 
-    if(btn){
-        btn.addEventListener("click", () =>{
-            const nome = document.getElementById("nome").value;
-            const categoria = document.getElementById("categoria").value;
-            const valor = parseFloat(document.getElementById("valor")).value;
-            const data = document.getElementById("data").value;
+document.addEventListener("DOMContentLoaded", () => {
+  const btn = document.getElementById("btn-proximo");
 
-        if (!nome || !categoria || !valor || !data){
-            alert("Preencha todos os campos!!")
-            return;
-        }
-        })
-    }
-})
+  if (btn) {
+    btn.addEventListener("click", () => {
+      const nome = document.getElementById("nome").value;
+      const categoria = document.getElementById("categoria").value;
+      const valor = parseFloat(document.getElementById("valor").value);
+      const data = document.getElementById("data").value;
+
+      if (!nome || !categoria || !valor || !data) {
+        alert("Preencha todos os campos.");
+        return;
+      }
+
+      salvarEtapa1({ nome, categoria, valor, data });
+      window.location.href = "class_custos.html";
+    });
+  }
+});

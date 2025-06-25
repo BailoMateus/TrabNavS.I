@@ -346,65 +346,91 @@ a:hover {
 
 /* ========== CONFIGURAÇÕES ========== */
 
-.config-wrapper {
-  background: #e1e1e1;
+.config-wrapper,
+.metas-container {
+  max-width: 800px;
+  margin: 20px auto;
   padding: 30px;
-  border-radius: 20px;
-  max-width: 700px;
-  margin: 40px auto;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  background-color: #f9f9f9 !important; /* !important para sobrescrever o estilo antigo de .config-wrapper */
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
-.config-wrapper h1 {
+.titulo-metas, /* Adicionando a classe de metas para referência, ela já existe */
+.config-wrapper h1 { /* Aplicando o estilo ao h1 dentro do wrapper de configurações */
   text-align: center;
+  color: #255959;
   margin-bottom: 30px;
-  color: #333;
+  font-size: 2rem;
 }
+
 
 .config-section {
-  background: #fff;
-  border-radius: 6px;
-  margin-bottom: 15px;
-  padding: 20px;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+  padding: 0; /* O padding agora será controlado por meta-summary e meta-content */
+  box-shadow: none; /* A sombra principal está em meta-section agora */
 }
 
-.config-section summary {
-  font-weight: bold;
-  font-size: 1rem;
-  cursor: pointer;
-  margin-bottom: 15px;
-  list-style: none;
+
+.config-item-block {
+  margin-bottom: 20px; /* Espaço entre os blocos de item (ex: entre Email e Senha) */
 }
 
-.config-group {
+.config-item-block:last-child {
+  margin-bottom: 0;
+}
+
+.config-item-block label {
+  display: block; /* Label fica acima do input/select */
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+}
+
+.config-input-group {
   display: flex;
   align-items: center;
-  gap: 15px;
-  margin-bottom: 15px;
+  gap: 10px; /* Espaço entre o input/select e o botão */
 }
 
-.config-group input,
-.config-group select {
-  flex: 1;
-  padding: 0.6rem;
+.config-input-group input,
+.config-input-group select {
+  flex-grow: 1; /* Input/select ocupa o espaço disponível */
+  padding: 0.7rem;
   border: 1px solid #ccc;
-  border-radius: 6px;
-  background: #f9f9f9;
+  border-radius: 5px;
+  background: #fdfdfd;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
 
-.config-group button {
-  padding: 0.6rem 1.2rem;
+.config-input-group input:focus,
+.config-input-group select:focus {
+  border-color: #118C80;
+  box-shadow: 0 0 0 2px rgba(17, 140, 128, 0.2);
+}
+
+.btn-config {
+  padding: 0.7rem 1.2rem;
   background: #255959;
   color: #fff;
   border: none;
-  border-radius: 6px;
+  border-radius: 5px;
   font-weight: bold;
+  font-size: 0.9rem;
   cursor: pointer;
+  transition: background 0.3s ease;
+  white-space: nowrap; /* Evita que o texto do botão quebre linha */
 }
 
-.config-group button:hover {
+.btn-config:hover {
   background: #118C80;
+}
+
+/* Ocultando a estrutura antiga .config-group, caso ela ainda exista em algum lugar por engano */
+.config-group {
+  display: none;
 }
 
 /* =========== LISTA DE DESPESAS =========== */
@@ -793,3 +819,4 @@ a:hover {
 .grafico-periodo-container {
   width: 100%; /* Garante que ocupe a largura disponível após os controles */
 }
+

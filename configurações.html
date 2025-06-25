@@ -9,9 +9,8 @@
 </head>
 <body class="dashboard-body">
 
-  <!-- HEADER -->
   <header class="main-header">
-    <img src="assets/logo.png" alt="" width="70px" />
+    <img src="assets/logo.png" alt="MoneyTrack Logo" width="70px" />
     <div class="header-title">MoneyTrack</div>
     <div class="user-menu">
       <i class="fas fa-bell notification-icon"></i>
@@ -22,62 +21,79 @@
     </div>
   </header>
 
-  <!-- SIDEBAR -->
   <aside class="main-sidebar">
     <nav class="sidebar-nav">
       <a href="dashboard.html"><i class="fas fa-home"></i> Página Inicial</a>
       <a href="relatorio_periodo.html"><i class="fas fa-calendar-alt"></i> Relatório Período</a>
       <a href="relatorio_categoria.html"><i class="fas fa-chart-pie"></i> Relatório Categoria</a>
       <a href="metas.html"><i class="fas fa-bullseye"></i> Metas</a>
-      <a href="#" class="active"><i class="fas fa-cog"></i> Configurações</a>
+      <a href="configurações.html" class="active"><i class="fas fa-cog"></i> Configurações</a>
     </nav>
   </aside>
 
-  <!-- CONTEÚDO -->
   <main class="content-area">
-    <div class="config-wrapper">
-      <h1>Configurações</h1>
+    <div class="metas-container">
+      <h1 class="titulo-metas">Configurações</h1> 
 
-      <!-- Login -->
-      <details open class="config-section">
-        <summary>Configurações de Login</summary>
-        <div class="config-group">
-          <label for="email">Email</label>
-          <input type="email" value="definitivamentemeuemail@gmail.com" disabled />
-          <button>Alterar Email</button>
-        </div>
-        <div class="config-group">
-          <label for="senha">Senha</label>
-          <input type="password" value="************" disabled />
-          <button>Alterar Senha</button>
-        </div>
-      </details>
-
-      <!-- Usuário -->
-      <details class="config-section">
-        <summary>Configurações de Usuário</summary>
-        <div class="config-group">
-          <label for="moeda">Moeda</label>
-          <select id="moeda">
-            <option>BRL</option>
-            <option>USD</option>
-            <option>EUR</option>
-          </select>
-          <button>Salvar</button>
+      <details class="meta-section" open> 
+        <summary class="meta-summary">
+          <span>Configurações de Login</span>
+          <i class="fas fa-chevron-down summary-icon"></i> 
+        </summary>
+        <div class="meta-content">
+          <div class="config-item-block">
+            <label for="emailLogin">Email</label>
+            <div class="config-input-group">
+              <input type="email" id="emailLogin" value="definitivamentemeuemail@gmail.com" disabled />
+              <button class="btn-config">Alterar Email</button>
+            </div>
+          </div>
+          <div class="config-item-block">
+            <label for="senhaLogin">Senha</label>
+            <div class="config-input-group">
+              <input type="password" id="senhaLogin" value="************" disabled />
+              <button class="btn-config">Alterar Senha</button>
+            </div>
+          </div>
         </div>
       </details>
 
-      <!-- Renda -->
-      <details class="config-section">
-        <summary>Configurações da Renda</summary>
-        <div class="config-group">
-          <label for="renda">Renda Atual</label>
-          <input type="number" placeholder="R$ 0,00" />
-          <button>Salvar</button>
+      <details class="meta-section">
+        <summary class="meta-summary">
+          <span>Configurações de Usuário</span>
+          <i class="fas fa-chevron-down summary-icon"></i> 
+        </summary>
+        <div class="meta-content">
+          <div class="config-item-block">
+            <label for="moedaUsuario">Moeda</label>
+            <div class="config-input-group">
+              <select id="moedaUsuario">
+                <option>BRL</option>
+                <option>USD</option>
+                <option>EUR</option>
+              </select>
+              <button class="btn-config">Salvar</button>
+            </div>
+          </div>
+        </div>
+      </details>
+
+      <details class="meta-section">
+        <summary class="meta-summary">
+          <span>Configurações da Renda</span>
+          <i class="fas fa-chevron-down summary-icon"></i> 
+        </summary>
+        <div class="meta-content">
+          <div class="config-item-block">
+            <label for="rendaAtual">Renda Atual</label>
+            <div class="config-input-group">
+              <input type="number" id="rendaAtual" placeholder="R$ 0,00" />
+              <button class="btn-config">Salvar</button>
+            </div>
+          </div>
         </div>
       </details>
     </div>
   </main>
-
 </body>
 </html>

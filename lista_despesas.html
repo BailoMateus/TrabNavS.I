@@ -26,7 +26,7 @@
       <a href="dashboard.html"><i class="fas fa-home"></i> Página Inicial</a>
       <a href="relatorio_periodo.html"><i class="fas fa-calendar-alt"></i> Relatório Período</a>
       <a href="relatorio_categoria.html"><i class="fas fa-chart-pie"></i> Relatório Categoria</a>
-      <a href="metas.html" class="active"><i class="fas fa-bullseye"></i> Metas</a>
+      <a href="metas.html" class=><i class="fas fa-bullseye"></i> Metas</a>
       <a href="configurações.html"><i class="fas fa-cog"></i> Configurações</a>
     </nav>
   </aside>
@@ -34,92 +34,40 @@
   <main class="content-area">
     <div class="lista-despesas-container">
       <h1>Lista de Despesas</h1>
-      <table class="tabela-despesas">
+  <table class="tabela-despesas">
         <thead>
           <tr>
             <th>Despesa</th>
-            <th>Data</th>
             <th>Categoria</th>
-            <th>Custo</th>
-            <th class="acoes-header">Editar/Deletar</th>
+            <th>Valor</th>
+            <th>Data</th>
+            <th>Pagamento</th>
+            <th>Parcelas</th>
+            <th class="acoes-header">Ações</th>
           </tr>
         </thead>
-        <tbody>
+        
+        <tbody id="tabela-despesas">
+          
           <tr>
-            <td><i class="fas fa-home icone-despesa"></i> Nome do custo 1</td>
-            <td>dd/mm/aa</td>
+            <td><i class="fas fa-home icone-despesa"></i> Aluguel</td>
             <td>Moradia</td>
             <td>R$ 1000,00</td>
+            <td>01/06/2025</td>
+            <td>Pix</td>
+            <td>1x</td>
             <td class="acoes-cell">
               <button class="btn-acao editar"><i class="fas fa-edit"></i></button>
               <button class="btn-acao deletar"><i class="fas fa-trash"></i></button>
             </td>
           </tr>
           <tr>
-            <td><i class="fas fa-utensils icone-despesa"></i> Nome do custo 2</td>
-            <td>dd/mm/aa</td>
+            <td><i class="fas fa-utensils icone-despesa"></i> Restaurante</td>
             <td>Alimentação</td>
-            <td>R$ 150,00</td>
-            <td class="acoes-cell">
-              <button class="btn-acao editar"><i class="fas fa-edit"></i></button>
-              <button class="btn-acao deletar"><i class="fas fa-trash"></i></button>
-            </td>
-          </tr>
-          <tr>
-            <td><i class="fas fa-film icone-despesa"></i> Nome do custo 3</td>
-            <td>dd/mm/aa</td>
-            <td>Lazer</td>
-            <td>R$ 85,00</td>
-            <td class="acoes-cell">
-              <button class="btn-acao editar"><i class="fas fa-edit"></i></button>
-              <button class="btn-acao deletar"><i class="fas fa-trash"></i></button>
-            </td>
-          </tr>
-          <tr>
-            <td><i class="fas fa-graduation-cap icone-despesa"></i> Nome do custo 4</td>
-            <td>dd/mm/aa</td>
-            <td>Estudos</td>
-            <td>R$ 300,00</td>
-            <td class="acoes-cell">
-              <button class="btn-acao editar"><i class="fas fa-edit"></i></button>
-              <button class="btn-acao deletar"><i class="fas fa-trash"></i></button>
-            </td>
-          </tr>
-          <tr>
-            <td><i class="fas fa-car icone-despesa"></i> Nome do custo 5</td>
-            <td>dd/mm/aa</td>
-            <td>Transporte</td>
-            <td>R$ 70,00</td>
-            <td class="acoes-cell">
-              <button class="btn-acao editar"><i class="fas fa-edit"></i></button>
-              <button class="btn-acao deletar"><i class="fas fa-trash"></i></button>
-            </td>
-          </tr>
-          <tr>
-            <td><i class="fas fa-plane icone-despesa"></i> Nome do custo 6</td>
-            <td>dd/mm/aa</td>
-            <td>Viagens</td>
-            <td>R$ 1200,00</td>
-            <td class="acoes-cell">
-              <button class="btn-acao editar"><i class="fas fa-edit"></i></button>
-              <button class="btn-acao deletar"><i class="fas fa-trash"></i></button>
-            </td>
-          </tr>
-          <tr>
-            <td><i class="fas fa-heartbeat icone-despesa"></i> Nome do custo 7</td>
-            <td>dd/mm/aa</td>
-            <td>Saúde</td>
-            <td>R$ 90,00</td>
-            <td class="acoes-cell">
-              <button class="btn-acao editar"><i class="fas fa-edit"></i></button>
-              <button class="btn-acao deletar"><i class="fas fa-trash"></i></button>
-            </td>
-          </tr>
-           <tr>
-            <td><i class="fas fa-shopping-cart icone-despesa"></i> Nome do custo 8</td>
-            <td>dd/mm/aa</td>
-            <td>Compras</td>
-            <td>R$ 250,00</td>
+            <td>R$ 80,00</td>
+            <td>03/06/2025</td>
+            <td>Cartão de Crédito</td>
+            <td>2x</td>
             <td class="acoes-cell">
               <button class="btn-acao editar"><i class="fas fa-edit"></i></button>
               <button class="btn-acao deletar"><i class="fas fa-trash"></i></button>
@@ -127,19 +75,18 @@
           </tr>
         </tbody>
       </table>
+
       <div class="paginacao">
         <a href="#" class="btn-paginacao">&laquo; Previous</a>
         <a href="#" class="btn-paginacao active-page">1</a>
         <a href="#" class="btn-paginacao">2</a>
-        <a href="#" class="btn-paginacao">3</a>
         <span class="ellipsis">...</span>
-        <a href="#" class="btn-paginacao">67</a>
-        <a href="#" class="btn-paginacao">68</a>
         <a href="#" class="btn-paginacao">Next &raquo;</a>
       </div>
     </div>
   </main>
 
+ <script type="module" src="./modules/despesa_listar.js"></script>
 
 </body>
 </html>
