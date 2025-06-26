@@ -343,7 +343,11 @@ a:hover {
   margin-left: auto;  
   margin-right: auto;
 }
-
+.categorias{
+    padding: 0.9rem;
+    border-color: #d3d3d3;
+    
+}
 /* ========== CONFIGURAÇÕES ========== */
 
 .config-wrapper,
